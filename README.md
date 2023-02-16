@@ -8,14 +8,16 @@ This project has support for Python 3 version
 
 Checklist topics of the course and commands necessary for job:
 
-1. Git
+1. Git:
+
 Local and remote branchs verification commands
 ``` console
 git branch -all (check all branchs)
 git remote -v (check all remotes branchs)
 ```
 
-Steps for job local
+Steps for job local:
+
 ``` console
 git fetch upstream (search for local branch updates of one remote repository)
 git branch 1 (add a new local branch)
@@ -30,22 +32,47 @@ git push --delete upstream 1(delete remote branch 1)
 git push --delete origin 1(delete remote branch 1)
 ```
 
-Final job
+Final job:
+
 ```console
 git fetch upstream (search update in the repository)
 git merge (download code update)
 ```
 
+.gitignore file:
 
-2. Pyenv
+Hide what should not be made available
+
+```console
+Pycharm files
+.idea/
+.classpath
+.project
+.settings/
+bin/
+*.sqlite3
+```
+
+```console
+:wq (exit)
+```
+
+```console
+git config --global core.excludesfile ~/.gitignore_global
+```
+
+2. Pyenv:
+
 Install differents Python versions in one PC
 
-Installation
+Installation:
+
 ```console
 bash <(curl -sSL https://raw.githubusercontent.com/zaemiel/ubuntu-pyenv-installer/master/ubuntu-pyenv-installer.sh) 
 ```
 
 Edit the .bashrc file final in the vim: 
+
 ```console
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -53,13 +80,16 @@ eval "$(pyenv init --path)"
 eval "$(pyenv virtualenv-init -)"
 ```
 
-vim commands
+vim commands:
+
 ```console
 vim .bashrc (open)
 i (edition)
 :wq (clone and save)
 ```
-Commands
+
+Commands:
+
 ```console
 pyenv install -l (list everything that can be installed)
 pyenv install 3.11.2 (Python 3.11.2 install)
@@ -70,9 +100,11 @@ python -V (display how global python activated)
 ```
 
 
-4. VirtualEnv
+3. VirtualEnv:
+
 Works with another python separate from system python
 The aim is to create one virtual envieronmental for be install libs differents of the O.S Python
+
 ```console
 python3 -m venv .venv
 source .venv/bin/activate
@@ -80,23 +112,28 @@ deativate
 ```
 
 
-5. Pip install, Requests and Flake8 libs, requirements.txt file
+4. Pip install, Requests and Flake8 libs, requirements.txt file:
+
 First activate the virtualenv for use pip install
 
-Requests (requirements.txt)
+Requests (requirements.txt):
+
 ```console
 pip install requests
 ```
 
-Flake8 (requirements-dev.txt)
+Flake8 (requirements-dev.txt):
+
 Check errors in the code (various or without spaces)
 ```console
 pip install flake8
 flake8
 ```
 
-Requeriments
+Requeriments:
+
 Generate the file txt with libs to be made available in github repository 
+
 ```console
 pip freeze > requirements.txt
 pip freeze > requirements-dev.txt (flake8, delete requirements libs )
